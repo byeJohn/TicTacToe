@@ -72,7 +72,7 @@ public class TicTacToe {
          case 9:
             gameBoard[4][4] = symbol;
             break;
-         deafult:
+         default:
             break;
       }
       
