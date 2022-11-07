@@ -13,14 +13,21 @@ public class TicTacToe {
       
       // prompts the user for input.
       Scanner scan = new Scanner(System.in);
-      System.out.println("Enter your placement (1-9): ");
-      int pos = scan.nextInt();
       
-      System.out.println(pos);
+      while(true) {
+         System.out.println("Enter your placement (1-9): ");
+         int playerPos = scan.nextInt();
+            
+         placePiece(gameBoard, playerPos, "player");
       
-      placePiece(gameBoard, pos, "player");
+         Random rand = new Random();
+         int cpuPos = rand.nextInt(9) + 1;
       
-      printGameBoard(gameBoard);
+         placePiece(gameBoard, cpuPos, "cpu");
+      
+         printGameBoard(gameBoard);    
+      }
+
 
    }
    
