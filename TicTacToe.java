@@ -103,6 +103,25 @@ public class TicTacToe {
       List cross1 = Arrays.asList(1,5,9);
       List cross2 = Arrays.asList(7,5,3);
       
+      List<List> winning = new ArrayList<List>();
+      winning.add(topRow);
+      winning.add(midRow);
+      winning.add(botRow);
+      
+      winning.add(leftCol);
+      winning.add(midCol);
+      winning.add(rightCol);
+      
+      winning.add(cross1);
+      winning.add(cross2);
+      
+      for(List l : winning) {
+         if(playerPositions.containsAll(l)) {
+            return "Nice Work! You Won!";
+         } else if(cpuPositions.contains(l)) {
+            return "You Lose! CPU Wins!";  
+         }
+      }
       
       return "";  
    }
